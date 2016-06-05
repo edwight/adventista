@@ -12,12 +12,12 @@ class CreateImageTable extends Migration
      */
     public function up()
     {
-        Schema::create('images',function(Blueprint $table){
-            $table->id('increment');
-            $table->photo_thump('string');
-            $table->photo('string');
+        Schema::create('img',function(Blueprint $table){
+            $table->increments('id');
+            $table->string('photo',100);
+            $table->string('photo_thump',100);
             $table->timestamps();
-            });
+        });
 
     }
 
@@ -28,6 +28,6 @@ class CreateImageTable extends Migration
      */
     public function down()
     {
-        Schema::drop('images')
+        Schema::drop('img');
     }
 }
